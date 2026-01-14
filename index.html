@@ -322,6 +322,311 @@
         .service-card p {
             color: #666;
             line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-features li {
+            color: #555;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .know-more {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .know-more:hover {
+            gap: 0.5rem;
+        }
+
+        .know-more::after {
+            content: '→';
+            margin-left: 0.3rem;
+            transition: margin-left 0.3s ease;
+        }
+
+        .know-more:hover::after {
+            margin-left: 0.7rem;
+        }
+
+        /* Detailed Services Section */
+        .detailed-services {
+            padding: var(--section-padding);
+            background: #f8f9fa;
+        }
+
+        .detailed-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .detailed-service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .detailed-service-card:nth-child(odd) {
+            border-top-color: var(--primary-color);
+        }
+
+        .detailed-service-card:nth-child(even) {
+            border-top-color: var(--secondary-color);
+        }
+
+        .detailed-service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .detailed-service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .detailed-service-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: var(--section-padding);
+            background: var(--light-bg);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            user-select: none;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-item.active .faq-question {
+            border-bottom-color: #FFA500;
+        }
+
+        .faq-toggle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #FFA500;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem 2rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Consultation Section */
+        .consultation {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .consultation-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .consultation-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .trust-indicators {
+            margin: 3rem 0;
+        }
+
+        .trust-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .trust-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .trust-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+
+        .trust-content p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .partner-logos {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .partner-logo {
+            padding: 1rem 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            font-weight: 600;
+            color: #555;
+        }
+
+        .consultation-form-wrapper {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .consultation-form-wrapper h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .consultation-form-wrapper .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            cursor: pointer;
+        }
+
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+        }
+
+        .btn-consultation {
+            background: #FFA500;
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .btn-consultation:hover {
+            background: #FF8C00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 165, 0, 0.4);
         }
 
         /* About Section */
@@ -613,7 +918,8 @@
             }
 
             .about-content,
-            .contact-content {
+            .contact-content,
+            .consultation-container {
                 grid-template-columns: 1fr;
             }
 
@@ -623,6 +929,14 @@
 
             .section-title h2 {
                 font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .detailed-services-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -643,6 +957,20 @@
             .nav-container {
                 padding: 1rem;
             }
+
+            .consultation-form-wrapper,
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .faq-question {
+                padding: 1rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .faq-answer {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -655,8 +983,8 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#technologies">Technologies</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#consultation">Book Call</a></li>
             </ul>
             <div class="mobile-menu" id="mobileMenu">
                 <span></span>
@@ -715,6 +1043,118 @@
                     <div class="service-icon">🎯</div>
                     <h3>AI Consulting</h3>
                     <p>Strategic guidance on AI adoption, implementation roadmaps, and best practices for your organization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services Section -->
+    <section class="detailed-services" id="detailed-services">
+        <div class="container">
+            <div class="section-title">
+                <h2>AI Development Services We Offer</h2>
+                <p>We offer end-to-end AI development services that help you automate workflows, build intelligent products, and enable data-driven decision-making.</p>
+            </div>
+            <div class="detailed-services-grid">
+                <div class="detailed-service-card">
+                    <h3>AI Technology Consulting</h3>
+                    <p>We offer AI consulting services to help businesses develop AI strategies and implement AI solutions tailored to their needs.</p>
+                    <ul class="service-features">
+                        <li>Evaluate tech stacks/frameworks</li>
+                        <li>Identify AI project feasibility</li>
+                        <li>Choose the right models & tools</li>
+                    </ul>
+                    <a href="#consultation" class="know-more">Know More</a>
+                </div>
+                <div class="detailed-service-card">
+                    <h3>Fine-tuning Models</h3>
+                    <p>We help optimize pre-trained AI models by fine-tuning them on specific datasets, making them more accurate and effective.</p>
+                    <ul class="service-features">
+                        <li>Dataset preparation & labeling</li>
+                        <li>Hyperparameter adjustment</li>
+                        <li>Improved accuracy</li>
+                    </ul>
+                    <a href="#consultation" class="know-more">Know More</a>
+                </div>
+                <div class="detailed-service-card">
+                    <h3>AI Product Development</h3>
+                    <p>We help you implement advanced chatbots, AI-powered conversational tools, and smart AI Assistants to enhance customer experience.</p>
+                    <ul class="service-features">
+                        <li>Prototype to production-ready apps</li>
+                        <li>Custom AI-based product features</li>
+                        <li>Model deployment & API integration</li>
+                    </ul>
+                    <a href="#consultation" class="know-more">Know More</a>
+                </div>
+                <div class="detailed-service-card">
+                    <h3>End-to-End AI Development</h3>
+                    <p>We design, build, and deploy AI models from the initial concept to the final implementation, providing a fully integrated AI solution.</p>
+                    <ul class="service-features">
+                        <li>Model selection & training</li>
+                        <li>Testing & performance evaluation</li>
+                        <li>Final deployment & maintenance</li>
+                    </ul>
+                    <a href="#consultation" class="know-more">Know More</a>
+                </div>
+                <div class="detailed-service-card">
+                    <h3>Custom AI Solutions</h3>
+                    <p>We design and build unique AI applications that cater to the specific requirements and challenges of individual businesses.</p>
+                    <ul class="service-features">
+                        <li>Custom vision model builds</li>
+                        <li>Integration with existing platforms</li>
+                        <li>Use-case-specific AI architecture</li>
+                    </ul>
+                    <a href="#consultation" class="know-more">Know More</a>
+                </div>
+                <div class="detailed-service-card">
+                    <h3>AI Model Integration</h3>
+                    <p>We help connect AI models with your apps and improve performance post-deployment, ensuring efficient and effective integration of AI technology.</p>
+                    <ul class="service-features">
+                        <li>Seamless backend integration</li>
+                        <li>Latency & speed improvements</li>
+                        <li>Model refactoring</li>
+                    </ul>
+                    <a href="#consultation" class="know-more">Know More</a>
+                </div>
+                <div class="detailed-service-card">
+                    <h3>AI Agent Development</h3>
+                    <p>Our intelligent AI agents are designed to automate tasks, enhance user interactions, and drive real-time decision-making.</p>
+                    <ul class="service-features">
+                        <li>Agent-based architecture</li>
+                        <li>NLP & LLM-powered workflows</li>
+                        <li>Goal-oriented task handling</li>
+                    </ul>
+                    <a href="#consultation" class="know-more">Know More</a>
+                </div>
+                <div class="detailed-service-card">
+                    <h3>Enterprise AI Development</h3>
+                    <p>We offer scalable enterprise AI development services to help automate operations, make data-driven decisions, and unlock new efficiencies.</p>
+                    <ul class="service-features">
+                        <li>Scalable AI solutions deployment</li>
+                        <li>Secure cloud infrastructure</li>
+                        <li>Multi-departmental data alignment</li>
+                    </ul>
+                    <a href="#consultation" class="know-more">Know More</a>
+                </div>
+                <div class="detailed-service-card">
+                    <h3>Generative AI Development</h3>
+                    <p>We build generative AI systems for content, code, image, or chatbot use cases using LLMs and diffusion models.</p>
+                    <ul class="service-features">
+                        <li>Custom GPT/LLM development</li>
+                        <li>Image/video generation workflows</li>
+                        <li>Text-to-speech or document summarization</li>
+                    </ul>
+                    <a href="#consultation" class="know-more">Know More</a>
+                </div>
+                <div class="detailed-service-card">
+                    <h3>Data Engineering</h3>
+                    <p>We prepare and manage your data pipelines and architecture to support advanced AI applications.</p>
+                    <ul class="service-features">
+                        <li>Data cleaning & preprocessing</li>
+                        <li>Real-time and batch pipelines</li>
+                        <li>Warehousing and lakehouse architecture</li>
+                    </ul>
+                    <a href="#consultation" class="know-more">Know More</a>
                 </div>
             </div>
         </div>
@@ -799,6 +1239,201 @@
                         <li>Docker & Kubernetes</li>
                         <li>MLOps Tools</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Planning to outsource AI development? Here are answers to the most common questions organizations ask before building an AI application.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>Why choose Denkbyte as your AI development company?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>As a leading AI app development company with expertise in AI solutions, Denkbyte offers industry-specific applications and a client-centric approach. We offer customized development, agile practices, data security, and cost-effective solutions with a proven delivery process.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it take to develop an AI-based application?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simple prototypes take 4-8 weeks; production applications typically take 3-6 months depending on complexity, data requirements, model training needs, and integration scope.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is the cost to develop an AI application?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The cost of AI application development services can vary depending on the complexity of the project, the size of the dataset, infrastructure requirements, and the expertise of the development team. Contact our experts and we will send you a quote within 24 hours.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can AI models be integrated into existing software systems?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, AI models can be seamlessly integrated into existing software systems through APIs, microservices architecture, or direct embedding. We ensure minimal disruption to your current operations while enhancing capabilities.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you ensure the fairness and lack of bias in AI systems?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We implement comprehensive bias detection and mitigation strategies including diverse training data, regular audits, fairness metrics monitoring, and transparent model evaluation processes to ensure ethical AI deployment.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you address data privacy and security concerns in AI development?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We follow industry best practices including data encryption, secure cloud infrastructure, compliance with GDPR/CCPA regulations, anonymization techniques, and regular security audits to protect your sensitive information.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you ensure the reliability and accuracy of AI models?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We employ rigorous testing methodologies, cross-validation techniques, continuous monitoring, A/B testing, and regular model retraining with updated data to maintain high accuracy and reliability standards.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you handle AI model updates and maintenance?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We provide comprehensive post-deployment support including performance monitoring, regular model updates, retraining with new data, bug fixes, and continuous optimization to ensure your AI solution remains effective over time.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can you integrate AI into our existing software or workflows?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We specialize in seamless AI integration with existing systems, whether it's through REST APIs, SDKs, or custom connectors. We ensure minimal disruption while maximizing the value AI brings to your workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section class="consultation" id="consultation">
+        <div class="container">
+            <div class="consultation-container">
+                <div class="consultation-info">
+                    <h2>Book Free Consultation</h2>
+                    <p style="color: #666; margin-bottom: 2rem;">Guaranteed response within 8 business hours.</p>
+
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <div class="trust-icon">🏆</div>
+                            <div class="trust-content">
+                                <h4>20+ years of experience</h4>
+                                <p>We can handle projects of all complexities.</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">👥</div>
+                            <div class="trust-content">
+                                <h4>4500+ satisfied customers</h4>
+                                <p>Startups to Fortune 500, we have worked with all.</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon">👨‍💻</div>
+                            <div class="trust-content">
+                                <h4>700+ in-house experts</h4>
+                                <p>Top 1% industry talent to ensure your digital success.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 3rem;">
+                        <p style="color: #666; margin-bottom: 1rem; font-weight: 600;">Trusted by Startups and Fortune 500 companies</p>
+                        <div class="partner-logos">
+                            <div class="partner-logo">🔷 Microsoft Partner</div>
+                            <div class="partner-logo">☁️ AWS Partner</div>
+                            <div class="partner-logo">🌐 Google Cloud</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="consultation-form-wrapper">
+                    <h3>Book Free Consultation</h3>
+                    <p class="subtitle">Guaranteed response within 8 business hours.</p>
+
+                    <form id="consultationForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emailAddress">Email</label>
+                                <input type="email" id="emailAddress" name="email" placeholder="Email Address" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone No.</label>
+                                <input type="tel" id="phoneNumber" name="phone" placeholder="Phone Number (Optional)">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Select Country</label>
+                                <select id="country" name="country" required>
+                                    <option value="">Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="IN">India</option>
+                                    <option value="OTHER">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Select Your Service</label>
+                            <select id="service" name="service" required>
+                                <option value="">Please Select From The Dropdown</option>
+                                <option value="ai-consulting">AI Technology Consulting</option>
+                                <option value="fine-tuning">Fine-tuning Models</option>
+                                <option value="ai-product">AI Product Development</option>
+                                <option value="end-to-end">End-to-End AI Development</option>
+                                <option value="custom-ai">Custom AI Solutions</option>
+                                <option value="ai-integration">AI Model Integration</option>
+                                <option value="ai-agents">AI Agent Development</option>
+                                <option value="enterprise-ai">Enterprise AI Development</option>
+                                <option value="generative-ai">Generative AI Development</option>
+                                <option value="data-engineering">Data Engineering</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="requirements">Your Requirements</label>
+                            <textarea id="requirements" name="requirements" placeholder="Project Brief" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-consultation">ENQUIRE NOW →</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -917,12 +1552,38 @@
             });
         });
 
-        // Form submission
+        // Form submission - Contact Form
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Thank you for your message! We will get back to you soon.');
             contactForm.reset();
+        });
+
+        // Form submission - Consultation Form
+        const consultationForm = document.getElementById('consultationForm');
+        consultationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for booking a consultation! We will get back to you within 8 business hours.');
+            consultationForm.reset();
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
         });
 
         // Intersection Observer for animations
@@ -941,7 +1602,7 @@
         }, observerOptions);
 
         // Observe service cards and tech categories
-        document.querySelectorAll('.service-card, .tech-category, .stat-item').forEach(el => {
+        document.querySelectorAll('.service-card, .detailed-service-card, .tech-category, .stat-item, .faq-item, .trust-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
