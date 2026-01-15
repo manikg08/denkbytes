@@ -1389,22 +1389,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="service">Select Your Service</label>
-                            <select id="service" name="service" required>
-                                <option value="">Please Select From The Dropdown</option>
-                                <option value="ai-consulting">AI Technology Consulting</option>
-                                <option value="fine-tuning">Fine-tuning Models</option>
-                                <option value="ai-product">AI Product Development</option>
-                                <option value="end-to-end">End-to-End AI Development</option>
-                                <option value="custom-ai">Custom AI Solutions</option>
-                                <option value="ai-integration">AI Model Integration</option>
-                                <option value="ai-agents">AI Agent Development</option>
-                                <option value="enterprise-ai">Enterprise AI Development</option>
-                                <option value="generative-ai">Generative AI Development</option>
-                                <option value="data-engineering">Data Engineering</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label for="requirements">Your Requirements</label>
                             <textarea id="requirements" name="requirements" placeholder="Project Brief" rows="5" required></textarea>
                         </div>
@@ -1471,12 +1455,51 @@
             });
         });
 
-        // Form submission - Consultation Form
+        // Form submission - Consultation Form with Google Forms Integration
         const consultationForm = document.getElementById('consultationForm');
-        consultationForm.addEventListener('submit', (e) => {
+
+        // Google Form URL (configured)
+        const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSeBONi-BI2w1qwWMPVKuGGkkRmi7ikFWq-odCGMwa4xHYqKDw/formResponse';
+
+        // Google Form Field IDs (configured from your pre-filled URL)
+        const GOOGLE_FORM_FIELDS = {
+            fullName: 'entry.918507723',
+            email: 'entry.702551752',
+            phone: 'entry.526136709',
+            country: 'entry.1836160354',
+            requirements: 'entry.1125590893'
+        };
+
+        consultationForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            alert('Thank you for booking a consultation! We will get back to you within 8 business hours.');
-            consultationForm.reset();
+
+            // Get form data
+            const formData = new FormData(consultationForm);
+
+            try {
+                // Prepare data for Google Forms
+                const googleFormData = new FormData();
+                googleFormData.append(GOOGLE_FORM_FIELDS.fullName, formData.get('fullName'));
+                googleFormData.append(GOOGLE_FORM_FIELDS.email, formData.get('email'));
+                googleFormData.append(GOOGLE_FORM_FIELDS.phone, formData.get('phone') || 'Not provided');
+                googleFormData.append(GOOGLE_FORM_FIELDS.country, formData.get('country'));
+                googleFormData.append(GOOGLE_FORM_FIELDS.requirements, formData.get('requirements'));
+
+                // Submit to Google Forms
+                await fetch(GOOGLE_FORM_ACTION, {
+                    method: 'POST',
+                    body: googleFormData,
+                    mode: 'no-cors' // Required for Google Forms
+                });
+
+                // Show success message
+                alert('✅ Thank you for booking a consultation! We will get back to you within 8 business hours.');
+                consultationForm.reset();
+
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('⚠️ There was an error submitting the form. Please try again or contact us directly at contact@denkbyte.com');
+            }
         });
 
         // FAQ Accordion
