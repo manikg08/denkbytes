@@ -1474,14 +1474,8 @@
         // Form submission - Consultation Form with Google Forms Integration
         const consultationForm = document.getElementById('consultationForm');
 
-        // IMPORTANT: Replace this with your Google Form URL
-        // To get this URL:
-        // 1. Open your Google Form
-        // 2. Click "Send" button
-        // 3. Click the link icon
-        // 4. Copy the URL and replace the one below
-        // 5. Change '/viewform' to '/formResponse' in the URL
-        const GOOGLE_FORM_ACTION = 'REPLACE_WITH_YOUR_GOOGLE_FORM_URL';
+        // Google Form URL (configured)
+        const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSeBONi-BI2w1qwWMPVKuGGkkRmi7ikFWq-odCGMwa4xHYqKDw/formResponse';
 
         // IMPORTANT: Replace these with your Google Form field IDs
         // To get field IDs:
@@ -1505,9 +1499,10 @@
             // Get form data
             const formData = new FormData(consultationForm);
 
-            // Check if Google Form is configured
-            if (GOOGLE_FORM_ACTION === 'REPLACE_WITH_YOUR_GOOGLE_FORM_URL') {
-                alert('Google Form integration is not yet configured. Please contact the administrator.');
+            // Check if field IDs are configured
+            if (GOOGLE_FORM_FIELDS.fullName === 'entry.XXXXXXX') {
+                alert('⚠️ Google Form field IDs are not yet configured. Please contact the administrator or check the console for instructions.');
+                console.error('SETUP REQUIRED: Please follow the instructions in the code to get your Google Form field IDs.');
                 return;
             }
 
