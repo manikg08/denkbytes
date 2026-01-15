@@ -1389,22 +1389,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="service">Select Your Service</label>
-                            <select id="service" name="service" required>
-                                <option value="">Please Select From The Dropdown</option>
-                                <option value="ai-consulting">AI Technology Consulting</option>
-                                <option value="fine-tuning">Fine-tuning Models</option>
-                                <option value="ai-product">AI Product Development</option>
-                                <option value="end-to-end">End-to-End AI Development</option>
-                                <option value="custom-ai">Custom AI Solutions</option>
-                                <option value="ai-integration">AI Model Integration</option>
-                                <option value="ai-agents">AI Agent Development</option>
-                                <option value="enterprise-ai">Enterprise AI Development</option>
-                                <option value="generative-ai">Generative AI Development</option>
-                                <option value="data-engineering">Data Engineering</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label for="requirements">Your Requirements</label>
                             <textarea id="requirements" name="requirements" placeholder="Project Brief" rows="5" required></textarea>
                         </div>
@@ -1477,20 +1461,13 @@
         // Google Form URL (configured)
         const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSeBONi-BI2w1qwWMPVKuGGkkRmi7ikFWq-odCGMwa4xHYqKDw/formResponse';
 
-        // IMPORTANT: Replace these with your Google Form field IDs
-        // To get field IDs:
-        // 1. Open your Google Form
-        // 2. Click the three dots menu > "Get pre-filled link"
-        // 3. Fill in dummy data and click "Get Link"
-        // 4. Look at the URL for entry.XXXXXXX values
-        // 5. Replace the values below with your actual entry IDs
+        // Google Form Field IDs (configured from your pre-filled URL)
         const GOOGLE_FORM_FIELDS = {
-            fullName: 'entry.XXXXXXX',      // Replace XXXXXXX with your actual field ID
-            email: 'entry.XXXXXXX',          // Replace XXXXXXX with your actual field ID
-            phone: 'entry.XXXXXXX',          // Replace XXXXXXX with your actual field ID
-            country: 'entry.XXXXXXX',        // Replace XXXXXXX with your actual field ID
-            service: 'entry.XXXXXXX',        // Replace XXXXXXX with your actual field ID
-            requirements: 'entry.XXXXXXX'    // Replace XXXXXXX with your actual field ID
+            fullName: 'entry.918507723',
+            email: 'entry.702551752',
+            phone: 'entry.526136709',
+            country: 'entry.1836160354',
+            requirements: 'entry.1125590893'
         };
 
         consultationForm.addEventListener('submit', async (e) => {
@@ -1499,13 +1476,6 @@
             // Get form data
             const formData = new FormData(consultationForm);
 
-            // Check if field IDs are configured
-            if (GOOGLE_FORM_FIELDS.fullName === 'entry.XXXXXXX') {
-                alert('⚠️ Google Form field IDs are not yet configured. Please contact the administrator or check the console for instructions.');
-                console.error('SETUP REQUIRED: Please follow the instructions in the code to get your Google Form field IDs.');
-                return;
-            }
-
             try {
                 // Prepare data for Google Forms
                 const googleFormData = new FormData();
@@ -1513,7 +1483,6 @@
                 googleFormData.append(GOOGLE_FORM_FIELDS.email, formData.get('email'));
                 googleFormData.append(GOOGLE_FORM_FIELDS.phone, formData.get('phone') || 'Not provided');
                 googleFormData.append(GOOGLE_FORM_FIELDS.country, formData.get('country'));
-                googleFormData.append(GOOGLE_FORM_FIELDS.service, formData.get('service'));
                 googleFormData.append(GOOGLE_FORM_FIELDS.requirements, formData.get('requirements'));
 
                 // Submit to Google Forms
