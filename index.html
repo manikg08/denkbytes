@@ -236,12 +236,6 @@
             transform: translateY(-3px);
         }
 
-        /* Services Section */
-        .services {
-            padding: var(--section-padding);
-            background: var(--light-bg);
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -264,67 +258,6 @@
             color: #666;
             max-width: 600px;
             margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 50px rgba(0, 102, 255, 0.15);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gradient);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
         }
 
         .service-features {
@@ -905,7 +838,6 @@
                 font-size: 2rem;
             }
 
-            .services-grid,
             .tech-grid {
                 grid-template-columns: 1fr;
             }
@@ -984,50 +916,8 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our AI Solutions</h2>
-                <p>Comprehensive AI development services tailored to your business needs</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🧠</div>
-                    <h3>Custom AI Development</h3>
-                    <p>Build bespoke AI solutions tailored to your specific business challenges and objectives, from concept to deployment.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Machine Learning Models</h3>
-                    <p>Develop and deploy sophisticated ML models for predictive analytics, classification, and pattern recognition.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💬</div>
-                    <h3>Natural Language Processing</h3>
-                    <p>Implement advanced NLP solutions including chatbots, sentiment analysis, and text generation systems.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">👁️</div>
-                    <h3>Computer Vision</h3>
-                    <p>Create powerful image recognition, object detection, and visual analysis applications for your business.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔄</div>
-                    <h3>AI Integration</h3>
-                    <p>Seamlessly integrate AI capabilities into your existing systems and workflows for enhanced performance.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>AI Consulting</h3>
-                    <p>Strategic guidance on AI adoption, implementation roadmaps, and best practices for your organization.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Detailed Services Section -->
-    <section class="detailed-services" id="detailed-services">
+    <section class="detailed-services" id="services">
         <div class="container">
             <div class="section-title">
                 <h2>AI Development Services We Offer</h2>
@@ -1538,7 +1428,7 @@
         }, observerOptions);
 
         // Observe service cards and tech categories
-        document.querySelectorAll('.service-card, .detailed-service-card, .tech-category, .stat-item, .faq-item, .trust-item').forEach(el => {
+        document.querySelectorAll('.detailed-service-card, .tech-category, .stat-item, .faq-item, .trust-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
